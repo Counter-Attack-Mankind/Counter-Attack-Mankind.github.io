@@ -113,7 +113,7 @@ function selectAllRandom() {
             const chineseLocation = locationChineseMap[locationFound];
 
             // 显示结果
-            resultElement.textContent = `随机选择了：地点 - ${chineseLocation}，楼层 - ${chineseFloor}，菜品 - ${selectedDish}`;
+            resultElement.textContent = `您随机选择了：菜品 - ${selectedDish}！`;
 
             // 更新下拉菜单的选择
             locationSelect.value = locationFound;
@@ -148,7 +148,7 @@ function selectAllRandom() {
         const chineseLocation = locationChineseMap[randomLocation];
 
         // 显示结果
-        resultElement.textContent = `随机选择了：地点 - ${chineseLocation}，楼层 - ${chineseFloor}，菜品 - ${selectedDish}`;
+        resultElement.textContent = `您随机选择了：菜品 - ${selectedDish}！`;
 
         // 更新下拉菜单的选择
         locationSelect.value = randomLocation;
