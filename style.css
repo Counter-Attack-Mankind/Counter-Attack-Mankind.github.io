@@ -1,0 +1,48 @@
+body {
+    background-color: #f1d5da; /* 浅粉色 */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 文字 */
+h1 {
+    font-size: 28px;
+    color: #68495b;
+}
+
+/* 按钮样式 */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+/* 修改 select 的样式 */
+select {
+    font-size: 16px;
+    color: #333;            /* 文字颜色 */
+    background-color: #fff; /* 下拉框背景色 */
+    padding: 5px 10px;      /* 内边距 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px;     /* 圆角 */
+    width: 200px;           /* 宽度 */
+    cursor: pointer;        /* 鼠标悬停时显示手型 */
+}
+
+/* 修改 option 的样式 */
+option {
+    font-size: 14px;        /* 字体大小 */
+    color: #000;            /* 文字颜色 */
+    background-color: #f9f9f9; /* 背景色 */
+    padding: 5px;           /* 内边距 */
+}
+
+label {
+    font-weight: bold;     /*加粗*/
+}

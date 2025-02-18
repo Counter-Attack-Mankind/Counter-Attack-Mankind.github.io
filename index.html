@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃啥啊！( ´･ω･)ﾉ(._.`)摸摸头</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>今天吃啥( ´･ω･)ﾉ(._.`)（南信西苑版）</h1>
+    <form id="canteenForm">
+        <!-- 地点选择 -->
+        <label for="location">地点:</label>
+        <select id="location" name="location">
+            <option value="new_canteen">西苑新食堂</option>
+            <option value="old_canteen">西苑老食堂</option>
+        </select>
+        <br><br>
+
+        <!-- 楼层选择 -->
+        <label for="floor">楼层:</label>
+        <select id="floor" name="floor">
+            <option value="first_floor">一楼</option>
+            <option value="second_floor">二楼</option>
+            <option value="third_floor">三楼</option>
+        </select>
+        <br><br>
+
+        <!-- 偏好选择 -->
+        <label for="preference">今日偏好：</label>
+        <select id="preference">
+            <option value="none" selected>无</option>
+            <option value="rice">米饭</option>
+            <option value="noodles">面食</option>
+        </select>
+        <br><br>
+
+        <!-- 提交按钮 -->
+        <button type="button" id="submitButton">确认选择</button>
+        <!-- 全部随机按钮 -->
+        <button type="button" id="randomButton">不知道，全部随机</button>
+    </form>
+
+    <!-- 输出结果 -->
+    <p id="result"></p>
+
+    <!-- 图片显示区域 -->
+    <div id="imageContainer" style="display: none;">
+        <img id="dishImage" src="" alt="菜品图片" style="max-width: 300px; max-height: 300px;">
+    </div>
+    
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
