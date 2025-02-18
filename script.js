@@ -176,7 +176,7 @@ function updateDishImage(dish) {
     const floor = floorSelect.value;
 
     // 构造图片路径
-    //const imagePath = `/images/${location}/${floor}/${dish}.jpg`;
+    const imagePath = `/images/${location}/${floor}/${dish}.jpg`;
     console.log("Location:", location);
     console.log("Floor:", floor);
     console.log("Generated Image Path:", imagePath);
