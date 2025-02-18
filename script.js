@@ -176,13 +176,14 @@ function updateDishImage(dish) {
     const floor = floorSelect.value;
 
     // 构造图片路径
-    const imagePath = `/images/${location}/${floor}/${dish}.jpg`;
+    const imagePath = `/images_webp/${location}/${floor}/${dish}.webp`;
     console.log("Location:", location);
     console.log("Floor:", floor);
     console.log("Generated Image Path:", imagePath);
 
     // 设置图片 src 属性
     dishImage.src = imagePath;
+    dishImage.loading = "lazy"; // 添加懒加载属性
 }
 
 // 显示图片容器函数
