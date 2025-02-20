@@ -170,21 +170,105 @@ function selectAllRandom() {
     }
 }
 
-function updateDishImage(dish) {
-    // 从下拉菜单获取当前选择的值
-    const location = locationSelect.value;
-    const floor = floorSelect.value;
+// 定义菜品与图片 URL 的映射关系
+const dishImageMap = {
+    "粥拾里": "https://pic1.imgdb.cn/item/67b6a428d0e0a243d400e346.jpg",
+    "袁记云饺": "https://pic1.imgdb.cn/item/67b6a427d0e0a243d400e345.jpg",
+    "尹大婶拌饭": "https://pic1.imgdb.cn/item/67b6a425d0e0a243d400e344.jpg",
+    "熊猫猫智慧餐厅": "https://pic1.imgdb.cn/item/67b6a424d0e0a243d400e343.jpg",
+    "瓦香鸡": "https://pic1.imgdb.cn/item/67b6a424d0e0a243d400e342.jpg",
+    "太和板面": "https://pic1.imgdb.cn/item/67b6a424d0e0a243d400e341.jpg",
+    "沙小龙": "https://pic1.imgdb.cn/item/67b6a423d0e0a243d400e340.jpg",
+    "三汁焖锅": "https://pic1.imgdb.cn/item/67b6a420d0e0a243d400e33f.jpg",
+    "彭城小地锅": "https://pic1.imgdb.cn/item/67b6a420d0e0a243d400e33e.jpg",
+    "牛百碗特色面": "https://pic1.imgdb.cn/item/67b6a41fd0e0a243d400e33d.jpg",
+    "隆江猪脚饭": "https://pic1.imgdb.cn/item/67b6a41fd0e0a243d400e33c.jpg",
+    "酷堡王": "https://pic1.imgdb.cn/item/67b6a41fd0e0a243d400e33b.jpg",
+    "超级烤肉饭": "https://pic1.imgdb.cn/item/67b6a41bd0e0a243d400e336.jpg",
+    "馋肉娃辣椒炒肉": "https://pic1.imgdb.cn/item/67b6a41bd0e0a243d400e335.jpg",
+    "茶香鸡热卤饭": "https://pic1.imgdb.cn/item/67b6a41ad0e0a243d400e334.jpg",
+    "煲玉小炒鸡": "https://pic1.imgdb.cn/item/67b6a41ad0e0a243d400e332.jpg",
+    "哎哟喂冒菜": "https://pic1.imgdb.cn/item/67b6a41ad0e0a243d400e331.jpg",
+    "朱家小馆羊杂面": "https://pic1.imgdb.cn/item/67b6a40fd0e0a243d400e32f.jpg",
+    "营养快餐": "https://pic1.imgdb.cn/item/67b6a40cd0e0a243d400e32c.jpg",
+    "徐州老味米线": "https://pic1.imgdb.cn/item/67b6a40bd0e0a243d400e32b.jpg",
+    "喜翻拌": "https://pic1.imgdb.cn/item/67b6a40bd0e0a243d400e329.jpg",
+    "喜得美超级堡": "https://pic1.imgdb.cn/item/67b6a40bd0e0a243d400e328.jpg",
+    "西里巷铁板厨房": "https://pic1.imgdb.cn/item/67b6a40ad0e0a243d400e327.jpg",
+    "瓦香鸡米饭2": "https://pic1.imgdb.cn/item/67b6a406d0e0a243d400e323.jpg",
+    "酥大娘烧饼": "https://pic1.imgdb.cn/item/67b6a406d0e0a243d400e322.jpg",
+    "手工馄饨水饺": "https://pic1.imgdb.cn/item/67b6a406d0e0a243d400e321.jpg",
+    "食太郎现炒浇头面": "https://pic1.imgdb.cn/item/67b6a406d0e0a243d400e320.jpg",
+    "螺当铺螺蛳粉": "https://pic1.imgdb.cn/item/67b6a405d0e0a243d400e31f.jpg",
+    "老母鸡牛肉汤": "https://pic1.imgdb.cn/item/67b6a400d0e0a243d400e31d.jpg",
+    "烤肉卤拌饭": "https://pic1.imgdb.cn/item/67b6a3ffd0e0a243d400e31c.jpg",
+    "吉利丼咖喱饭": "https://pic1.imgdb.cn/item/67b6a3ffd0e0a243d400e31b.jpg",
+    "回味香小炒": "https://pic1.imgdb.cn/item/67b6a3ffd0e0a243d400e31a.jpg",
+    "搞一碗炒饭": "https://pic1.imgdb.cn/item/67b6a3ffd0e0a243d400e319.jpg",
+    "重庆小面": "https://pic1.imgdb.cn/item/67b6a3f6d0e0a243d400e318.jpg",
+    "杂粮煎饼": "https://pic1.imgdb.cn/item/67b6a3f6d0e0a243d400e317.jpg",
+    "岳阳楼粉面馆": "https://pic1.imgdb.cn/item/67b6a3f5d0e0a243d400e316.jpg",
+    "扬州炒饭": "https://pic1.imgdb.cn/item/67b6a3f5d0e0a243d400e315.jpg",
+    "香酥鸡特色饭": "https://pic1.imgdb.cn/item/67b6a3eed0e0a243d400e30e.jpg",
+    "喜多多自选盖饭": "https://pic1.imgdb.cn/item/67b6a3eed0e0a243d400e30d.jpg",
+    "芜湖小炒": "https://pic1.imgdb.cn/item/67b6a3eed0e0a243d400e30c.jpg",
+    "王朝虎麻辣烫": "https://pic1.imgdb.cn/item/67b6a3edd0e0a243d400e30b.jpg",
+    "瓦香鸡米饭1": "https://pic1.imgdb.cn/item/67b6a3edd0e0a243d400e30a.jpg",
+    "特色饼": "https://pic1.imgdb.cn/item/67b6a3e7d0e0a243d400e309.jpg",
+    "七里香馄饨煎饼": "https://pic1.imgdb.cn/item/67b6a3e7d0e0a243d400e308.jpg",
+    "面夫子": "https://pic1.imgdb.cn/item/67b6a3e7d0e0a243d400e307.jpg",
+    "马姥姥水饺": "https://pic1.imgdb.cn/item/67b6a3e7d0e0a243d400e306.jpg",
+    "兰州拉面民族风味": "https://pic1.imgdb.cn/item/67b6a3e6d0e0a243d400e305.jpg",
+    "囧一碗水煮肉片": "https://pic1.imgdb.cn/item/67b6a3ddd0e0a243d400e2fc.jpg",
+    "精品快餐3": "https://pic1.imgdb.cn/item/67b6a3dcd0e0a243d400e2fb.jpg",
+    "黄焖鸡米饭2": "https://pic1.imgdb.cn/item/67b6a3dcd0e0a243d400e2fa.jpg",
+    "脆皮烤鸭饭": "https://pic1.imgdb.cn/item/67b6a3dcd0e0a243d400e2f9.jpg",
+    "超级汉堡": "https://pic1.imgdb.cn/item/67b6a3dcd0e0a243d400e2f8.jpg",
+    "重庆特色面": "https://pic1.imgdb.cn/item/67b6a32ad0e0a243d400e2d2.jpg",
+    "玉娘娘水饺": "https://pic1.imgdb.cn/item/67b6a32ad0e0a243d400e2d1.jpg",
+    "香锅麻辣烫": "https://pic1.imgdb.cn/item/67b6a329d0e0a243d400e2d0.jpg",
+    "无刺酸菜鱼": "https://pic1.imgdb.cn/item/67b6a329d0e0a243d400e2cf.jpg",
+    "土豆泥拌饭": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2ce.jpg",
+    "日韩料理": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2cd.jpg",
+    "牛肉汤鸡面": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2cc.jpg",
+    "精品快餐2": "https://pic1.imgdb.cn/item/67b6a323d0e0a243d400e2cb.jpg",
+    "铁板炒饭炸串": "https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c6.jpg",
+    "川渝盖浇饭": "https://pic1.imgdb.cn/item/67b6a31ed0e0a243d400e2ca.jpg",
+    "茶香鸡": "https://pic1.imgdb.cn/item/67b6a31ed0e0a243d400e2c9.jpg",
+    "黄焖鸡米饭1": "https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c8.jpg",
+    "剁椒猪脚饭": "https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c7.jpg",
+    "镇江锅盖面": "https://pic1.imgdb.cn/item/67b6a254d0e0a243d400e26f.jpg",
+    "营养粥": "https://pic1.imgdb.cn/item/67b6a254d0e0a243d400e26e.jpg",
+    "鲜食烩套餐": "https://pic1.imgdb.cn/item/67b6a254d0e0a243d400e26d.jpg",
+    "三汁焖锅": "https://pic1.imgdb.cn/item/67b6a250d0e0a243d400e26b.jpg",
+    "青海拉面": "https://pic1.imgdb.cn/item/67b6a24fd0e0a243d400e26a.jpg",
+    "沏芝堡": "https://pic1.imgdb.cn/item/67b6a24fd0e0a243d400e269.jpg",
+    "手工水饺": "https://pic1.imgdb.cn/item/67b6a24fd0e0a243d400e268.jpg",
+    "烤盘饭": "https://pic1.imgdb.cn/item/67b6a248d0e0a243d400e267.jpg",
+    "精品快餐1": "https://pic1.imgdb.cn/item/67b6a248d0e0a243d400e266.jpg",
+    "煎饼烤冷面": "https://pic1.imgdb.cn/item/67b6a248d0e0a243d400e265.jpg",
+    "麻辣拌": "https://pic1.imgdb.cn/item/67b6a248d0e0a243d400e264.jpg",
+    "馄饨汤包炒面": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e216.jpg",
+    "黄焖鸡&米线": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e215.jpg",
+    "干锅演义": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e214.jpg",
+    "0090汉堡工厂": "https://pic1.imgdb.cn/item/67b6a05fd0e0a243d400e207.jpg"
+    
+};
 
-    // 构造图片路径
-    const imagePath = `/images_webp/${location}/${floor}/${dish}.webp`;
-    console.log("Location:", location);
-    console.log("Floor:", floor);
-    console.log("Generated Image Path:", imagePath);
 
-    // 设置图片 src 属性
-    dishImage.src = imagePath;
-    dishImage.loading = "lazy"; // 添加懒加载属性
+// 更新图片函数
+function updateDishImage(dishName) {
+    const imagePath = dishImageMap[dishName] || "https://via.placeholder.com/300"; // 默认占位图
+
+    if (imagePath) {
+        dishImage.src = imagePath;
+        dishImage.loading = "lazy"; // 添加懒加载属性
+    } else {
+        console.warn(`未找到菜品 "${dishName}" 对应的图片链接`);
+        dishImage.src = ""; // 清空图片源
+    }
 }
+
 
 // 显示图片容器函数
 function showImageContainer() {
