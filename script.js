@@ -9,7 +9,7 @@ const dishes = {
     old_canteen: {
         first_floor: ['囧一碗水煮肉片', '马姥姥水饺', '扬州炒饭','芜湖小炒','王朝虎麻辣烫','犟小强麻辣烫','黄焖鸡米饭2','兰州拉面民族风味','脆皮烤鸭饭','重庆小面','香酥鸡特色饭',
             '精品快餐3','面夫子','喜多多自选盖饭','特色饼','瓦香鸡米饭1','杂粮煎饼','七里香馄饨煎饼','岳阳楼粉面馆','超级汉堡'],
-        second_floor: ['喜翻拌', '螺当铺螺蛳粉', '烤肉卤拌饭','食太郎现炒浇头面','手工馄饨水饺','瓦香鸡米饭2','营养快餐','酥大娘烧饼','朱家小馆羊杂面','老母鸡牛肉汤面',
+        second_floor: ['喜翻拌', '螺当铺螺蛳粉', '烤肉卤拌饭','食太郎现炒浇头面','手工馄饨水饺','瓦香鸡米饭2','营养快餐','酥大娘烧饼','朱家小馆羊杂面','老母鸡牛肉汤',
             '西里巷铁板厨房','搞一碗炒饭','回味香小炒','徐州老味米线','吉利丼咖喱饭','喜得美超级堡'],
         third_floor: ['熊猫猫智慧餐厅', '三汁焖锅', '彭城小地锅','超级烤肉饭','匠心卤','冯记烤鸭饭','瓦香鸡','酷堡王','太和板面','哎哟喂冒菜','隆江猪脚饭',
             '烤鸡焖面','煲玉小炒鸡','粥拾里','沙小龙','东北黏糊麻辣烫','尹大婶拌饭','馋肉娃辣椒炒肉','牛百碗特色面','茶香鸡热卤饭','川菜小炒','袁记云饺']
@@ -230,7 +230,7 @@ const dishImageMap = {
     "无刺酸菜鱼": "https://pic1.imgdb.cn/item/67b6a329d0e0a243d400e2cf.jpg",
     "土豆泥拌饭": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2ce.jpg",
     "日韩料理": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2cd.jpg",
-    "牛肉汤鸡面": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2cc.jpg",
+    "牛肉汤鸡汤": "https://pic1.imgdb.cn/item/67b6a324d0e0a243d400e2cc.jpg",
     "精品快餐2": "https://pic1.imgdb.cn/item/67b6a323d0e0a243d400e2cb.jpg",
     "铁板炒饭炸串": "https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c6.jpg",
     "川渝盖浇饭": "https://pic1.imgdb.cn/item/67b6a31ed0e0a243d400e2ca.jpg",
@@ -251,7 +251,12 @@ const dishImageMap = {
     "馄饨汤包炒面": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e216.jpg",
     "黄焖鸡&米线": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e215.jpg",
     "干锅演义": "https://pic1.imgdb.cn/item/67b6a076d0e0a243d400e214.jpg",
-    "0090汉堡工厂": "https://pic1.imgdb.cn/item/67b6a05fd0e0a243d400e207.jpg"
+    "0090汉堡工厂": "https://pic1.imgdb.cn/item/67b6a05fd0e0a243d400e207.jpg",
+    "冯记烤鸭饭":"https://pic1.imgdb.cn/item/67b6f0c7d0e0a243d400fe9c.jpg",
+    "匠心卤":"https://pic1.imgdb.cn/item/67b6f1ebd0e0a243d400ffc4.jpg",
+    "东北黏糊麻辣烫":"https://pic1.imgdb.cn/item/67b6f262d0e0a243d4010038.jpg",
+    "川菜小炒":"https://pic1.imgdb.cn/item/67b6f2a9d0e0a243d4010057.jpg",
+    "大碗面":"https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c6.jpg"
     
 };
 
