@@ -256,7 +256,8 @@ const dishImageMap = {
     "匠心卤":"https://pic1.imgdb.cn/item/67b6f1ebd0e0a243d400ffc4.jpg",
     "东北黏糊麻辣烫":"https://pic1.imgdb.cn/item/67b6f262d0e0a243d4010038.jpg",
     "川菜小炒":"https://pic1.imgdb.cn/item/67b6f2a9d0e0a243d4010057.jpg",
-    "大碗面":"https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c6.jpg"
+    "大碗面":"https://pic1.imgdb.cn/item/67b6a31dd0e0a243d400e2c6.jpg",
+    "烤鸡焖面":"https://pic1.imgdb.cn/item/67b6f572d0e0a243d401013f.jpg"
     
 };
 
